@@ -1,0 +1,146 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 30
+    defaultConfig {
+        applicationId "com.iusmob.adklein.demo"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 30001
+        versionName "3.0.1"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 设置支持的SO库架构，暂不支持x86
+            abiFilters 'armeabi-v7a' // 'armeabi', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        debug {
+            v2SigningEnabled true
+            storeFile file('../demo.jks')
+            storePassword 'adsaas'
+            keyAlias 'demo'
+            keyPassword 'adsaas'
+        }
+        release {
+            v2SigningEnabled true
+            storeFile file('../demo.jks')
+            storePassword 'adsaas'
+            keyAlias 'demo'
+            keyPassword 'adsaas'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.tencent.bugly:crashreport:3.2.33'
+    implementation 'com.tencent.bugly:nativecrashreport:3.7.3'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    // 内存泄漏监测
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.4'
+
+    // support支持库，如果是AndroidX请使用对应的支持库
+    implementation 'com.android.support:appcompat-v7:30.0.0'
+    implementation 'com.android.support:support-v4:30.0.0'
+    implementation 'com.android.support:design:30.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    implementation(name: 'msa_mdid_1.0.23', ext: 'aar')
+
+    // adKleinSdk(必须)
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation(name: 'adKlein_core_3.0.1', ext: 'aar')
+
+    // 莫比乌斯，推荐接入(需要gson和okhttp支持)
+    implementation(name: 'mobius_ad_2.0.0', ext: 'aar')
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    // 头条，推荐接入
+    implementation(name: 'adKlein_adapter_toutiao_2.0.1', ext: 'aar')
+    implementation(name: 'open_ad_sdk', ext: 'aar')
+
+    // 广点通，推荐接入
+    implementation(name: 'adKlein_adapter_gdt_2.0.1', ext: 'aar')
+    implementation(name: 'GDTSDK.unionNormal.4.362.1232', ext: 'aar')
+
+    // 快手AdapterSDK，可选的
+    implementation(name: 'adKlein_adapter_ks_2.0.1', ext: 'aar')
+    implementation(name: 'kssdk_ad3.3.6', ext: 'aar')
+
+    // 百度AdapterSDK，可选的
+    implementation(name: 'adKlein_adapter_bd_2.0.1', ext: 'aar')
+    implementation(name: 'Baidu_MobAds_SDK', ext: 'aar')
+
+    // AdMobAdapterSdk，可选的（海外市场）
+    implementation(name: 'adKlein_adapter_am_2.0.0', ext: 'aar')
+    implementation 'com.google.android.gms:play-services-ads:19.8.0'
+
+    // SmMobAdapterSdk，可选的（海外市场）
+    implementation(name: 'adKlein_adapter_sm_2.0.1', ext: 'aar')
+    implementation 'com.smaato.android.sdk:smaato-sdk:21.5.7'
+    implementation 'com.smaato.android.sdk:smaato-sdk-banner:21.5.7'
+    implementation 'com.smaato.android.sdk:smaato-sdk-interstitial:21.5.7'
+    implementation 'com.smaato.android.sdk:smaato-sdk-rewarded-ads:21.5.7'
+    implementation 'com.smaato.android.sdk:smaato-sdk-native:21.5.7'
+
+    // 芒果AdapterSDK，可选的(需要fresco和volley支持)
+    implementation(name: 'adKlein_adapter_mg_2.0.1', ext: 'aar')
+    implementation(name: 'MGADSDK_3.2.3_20201203', ext: 'aar')
+    implementation(name: 'playercore-release', ext: 'aar')
+    implementation(name: 'gzssdk-2.0.3', ext: 'aar')
+    //网络库
+    implementation 'com.android.volley:volley:1.1.0'
+    //图片库
+    implementation 'com.facebook.fresco:fresco:1.5.0'
+    implementation 'com.facebook.fresco:animated-gif:1.5.0'
+    implementation 'com.facebook.fresco:animated-webp:1.5.0'
+    implementation 'com.facebook.fresco:webpsupport:1.5.0'
+    implementation 'com.facebook.fresco:imagepipeline-okhttp3:0.12.0+'
+
+    //华为AdapterSDK，可选的(还需要glide支持)
+    implementation(name: 'adKlein_adapter_hw_2.0.0', ext: 'aar')
+    implementation 'com.huawei.hms:ads-extra:13.4.34.300'
+    implementation(name: 'ads-banner-inner-13.4.40.302', ext: 'aar')
+    implementation(name: 'ads-base-inner-13.4.40.302', ext: 'aar')
+    implementation(name: 'ads-instream-inner-13.4.40.302', ext: 'aar')
+    implementation(name: 'ads-interstitial-inner-13.4.40.302', ext: 'aar')
+    implementation(name: 'ads-lang-inner-13.4.40.302', ext: 'aar')
+    implementation(name: 'ads-native-inner-13.4.40.302', ext: 'aar')
+    implementation(name: 'ads-reward-inner-13.4.40.302', ext: 'aar')
+    implementation(name: 'ads-splash-inner-13.4.40.302', ext: 'aar')
+    implementation(name: 'ads-template-inner-13.4.40.302', ext: 'aar')
+
+    //米盟AdapterSDK，可选的（还需要gson和glide支持）
+    implementation(name: 'adKlein_adapter_mimo_2.0.1', ext: 'aar')
+    implementation(name: 'mimo-ad-sdk', ext: 'aar')
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.iusmob.adklein.demo.widget.KleinSmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refreshLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.iusmob.adklein.demo.activity.DrawAdActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</com.iusmob.adklein.demo.widget.KleinSmartRefreshLayout>

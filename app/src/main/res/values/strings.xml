@@ -1,0 +1,26 @@
+<resources>
+    <!--<string name="app_name">AdKlein广告Demo</string>-->
+    <string name="splash_ad">开屏广告</string>
+    <string name="banner_ad">Banner广告</string>
+    <string name="reward_video_ad">激励视频广告</string>
+    <string name="fullscreen_video_ad">全屏视频广告</string>
+    <string name="interstitial_ad">插屏广告</string>
+    <string name="draw_ad">Draw广告</string>
+    <string name="more_game_ad">更多游戏</string>
+    <string name="native_page">信息流广告</string>
+    <string name="native_ad">信息流(自渲染)广告</string>
+    <string name="native_ad_list">信息流(自渲染)广告列表</string>
+    <string name="native_ad_express">信息流(模版)广告</string>
+    <string name="native_ad_express_list">信息流(模版)广告列表</string>
+    <string name="splash_skip_text">%d | 跳过</string>
+
+    <string name="web">Web</string>
+
+    <string name="privacy_policy">亲爱的开发者，非常感谢您选择并选用AdKlein 广告聚合SaaS服务！\n\n
+为了保证您的App顺利通过合规检测，本提示将向你演示AdKleinSdk初始化合规方案；\n
+\t1. APP首次运行时请通过弹窗等明显方式提示用户阅读《隐私政策》，用户确认同意《隐私政策》后，再启用SDK进行个人信息的收集与处理。\n
+\t2. 本提示的内容及《用户协议》、《隐私政策》需根据你的APP业务需求进行编写，可参考《网络安全标准实践指南—移动互联网应用程序（App）收集使用个人信息自评估指南》或咨询对接人员；\n\n
+你可以通过阅读完整版的AdKlein 《隐私政策》了解AdKlein详细隐私策略。
+    </string>
+
+</resources>
