@@ -6,8 +6,8 @@ android {
         applicationId "com.iusmob.adklein.demo"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 30001
-        versionName "3.0.1"
+        versionCode 30002
+        versionName "3.0.2"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -79,18 +79,18 @@ dependencies {
 
     // adKleinSdk(必须)
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
-    implementation(name: 'adKlein_core_3.0.1', ext: 'aar')
+    implementation(name: 'adKlein_core_3.0.2', ext: 'aar')
 
     // 莫比乌斯，推荐接入(需要gson和okhttp支持)
-    implementation(name: 'mobius_ad_2.0.0', ext: 'aar')
+    implementation(name: 'mobius_ad_2.0.2', ext: 'aar')
     implementation 'com.google.code.gson:gson:2.8.5'
 
     // 头条，推荐接入
-    implementation(name: 'adKlein_adapter_toutiao_2.0.1', ext: 'aar')
+    implementation(name: 'adKlein_adapter_toutiao_2.0.2', ext: 'aar')
     implementation(name: 'open_ad_sdk', ext: 'aar')
 
     // 广点通，推荐接入
-    implementation(name: 'adKlein_adapter_gdt_2.0.1', ext: 'aar')
+    implementation(name: 'adKlein_adapter_gdt_2.0.2', ext: 'aar')
     implementation(name: 'GDTSDK.unionNormal.4.362.1232', ext: 'aar')
 
     // 快手AdapterSDK，可选的
@@ -98,15 +98,15 @@ dependencies {
     implementation(name: 'kssdk_ad3.3.6', ext: 'aar')
 
     // 百度AdapterSDK，可选的
-    implementation(name: 'adKlein_adapter_bd_2.0.1', ext: 'aar')
+    implementation(name: 'adKlein_adapter_bd_2.0.2', ext: 'aar')
     implementation(name: 'Baidu_MobAds_SDK', ext: 'aar')
 
     // AdMobAdapterSdk，可选的（海外市场）
-    implementation(name: 'adKlein_adapter_am_2.0.0', ext: 'aar')
+    implementation(name: 'adKlein_adapter_am_2.0.1', ext: 'aar')
     implementation 'com.google.android.gms:play-services-ads:19.8.0'
 
     // SmMobAdapterSdk，可选的（海外市场）
-    implementation(name: 'adKlein_adapter_sm_2.0.1', ext: 'aar')
+    implementation(name: 'adKlein_adapter_sm_2.0.2', ext: 'aar')
     implementation 'com.smaato.android.sdk:smaato-sdk:21.5.7'
     implementation 'com.smaato.android.sdk:smaato-sdk-banner:21.5.7'
     implementation 'com.smaato.android.sdk:smaato-sdk-interstitial:21.5.7'
@@ -114,7 +114,7 @@ dependencies {
     implementation 'com.smaato.android.sdk:smaato-sdk-native:21.5.7'
 
     // 芒果AdapterSDK，可选的(需要fresco和volley支持)
-    implementation(name: 'adKlein_adapter_mg_2.0.1', ext: 'aar')
+    implementation(name: 'adKlein_adapter_mg_2.0.2', ext: 'aar')
     implementation(name: 'MGADSDK_3.2.3_20201203', ext: 'aar')
     implementation(name: 'playercore-release', ext: 'aar')
     implementation(name: 'gzssdk-2.0.3', ext: 'aar')
@@ -128,7 +128,7 @@ dependencies {
     implementation 'com.facebook.fresco:imagepipeline-okhttp3:0.12.0+'
 
     //华为AdapterSDK，可选的(还需要glide支持)
-    implementation(name: 'adKlein_adapter_hw_2.0.0', ext: 'aar')
+    implementation(name: 'adKlein_adapter_hw_2.0.1', ext: 'aar')
     implementation 'com.huawei.hms:ads-extra:13.4.34.300'
     implementation(name: 'ads-banner-inner-13.4.40.302', ext: 'aar')
     implementation(name: 'ads-base-inner-13.4.40.302', ext: 'aar')
@@ -141,6 +141,6 @@ dependencies {
     implementation(name: 'ads-template-inner-13.4.40.302', ext: 'aar')
 
     //米盟AdapterSDK，可选的（还需要gson和glide支持）
-    implementation(name: 'adKlein_adapter_mimo_2.0.1', ext: 'aar')
+    implementation(name: 'adKlein_adapter_mimo_2.0.2', ext: 'aar')
     implementation(name: 'mimo-ad-sdk', ext: 'aar')
 }

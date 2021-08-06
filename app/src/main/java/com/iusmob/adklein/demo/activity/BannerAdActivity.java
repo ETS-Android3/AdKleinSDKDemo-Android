@@ -41,8 +41,7 @@ public class BannerAdActivity extends AppCompatActivity {
                     @Override
                     public void onError(AdKleinError adKleinError) {
                         ToastUtils.toast(BannerAdActivity.this,
-                                String.format("error %d, %s", adKleinError.getErrorCode(),
-                                        adKleinError.getErrorMsg()),
+                                "banner onError " + adKleinError.getErrorCode() + " " + adKleinError.getErrorMsg(),
                                 Toast.LENGTH_SHORT);
                     }
 
@@ -65,7 +64,9 @@ public class BannerAdActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT);
                     }
                 },
-                15000, width, 0.0F);
+                width, 0.0F);
+        // 设置自刷新时间间隔，0为不自动刷新，其他取值范围为[30,120]，单位秒
+        kleinBanner.setAutoRefreshInterval(30);
         kleinBanner.load();
     }
 }

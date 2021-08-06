@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.imagepipeline.decoder.SimpleProgressiveJpegConfig;
+import com.iusmob.adklein.ad.AdKleinInitConfig;
 import com.iusmob.adklein.ad.AdKleinSDK;
 import com.iusmob.adklein.demo.activity.SplashAdActivity;
 import com.tencent.bugly.crashreport.CrashReport;
@@ -36,7 +37,10 @@ public class DemoApplication extends Application {
         ImagePipelineConfig.newBuilder(this).setProgressiveJpegConfig(new SimpleProgressiveJpegConfig()).build();
         Fresco.initialize(this);
         Log.e("kele", "packager:" + getPackageName());
-        AdKleinSDK.init(this, DemoConstants.MEDIA_ID, BuildConfig.DEBUG);
+        AdKleinSDK.init(this, new AdKleinInitConfig.Builder()
+                .mediaId(DemoConstants.MEDIA_ID)
+                .deBug(BuildConfig.DEBUG)
+                .build());
 
         // 如果有接开屏广告，可以设置应用进入后台一段时间后回到应用再次开启开屏界面，增加开屏广告收益（仅供参考，无需要可不设置）
         openSplashActivityAgain();
