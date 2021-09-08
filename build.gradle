@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+
     repositories {
         google()
         jcenter()
@@ -16,9 +16,18 @@ allprojects {
         google()
         jcenter()
         maven { url "https://jitpack.io" }
+        // 添加以下仓库地址
+        // AdKlein远程仓库 credentials：访客模式
         maven {
-            url "https://s3.amazonaws.com/smaato-sdk-releases/"
+            credentials {
+                username '612da771fa25fa3e244cf7d8'
+                password '488L5cNZL50n'
+            }
+            url 'https://packages.aliyun.com/maven/repository/2133520-release-i5MW1M/'
         }
+        // 如果添加了smaato广告,需要添加smaato的远程仓库依赖
+        maven { url "https://s3.amazonaws.com/smaato-sdk-releases/" }
+        // 如果添加了华为联盟广告，需要添加华为联盟的远程仓库依赖
         maven { url 'http://developer.huawei.com/repo/' }
     }
 }

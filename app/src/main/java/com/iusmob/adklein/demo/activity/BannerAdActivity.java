@@ -69,4 +69,13 @@ public class BannerAdActivity extends AppCompatActivity {
         kleinBanner.setAutoRefreshInterval(30);
         kleinBanner.load();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (kleinBanner != null) {
+            kleinBanner.destroy();
+        }
+    }
+
 }

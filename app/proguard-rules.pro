@@ -49,14 +49,19 @@
 -keep public class com.netease.nis.sdkwrapper.Utils {public <methods>;}
 
 # 广点通广告平台混淆
--keep class com.qq.e.** {public protected *;}
--keep class MTT.ThirdAppInfoNew {*;}
--keep class com.tencent.** {*;}
+-dontwarn com.qq.gdt.action.**
+-keep class com.qq.gdt.action.** {*;}
+-keepclasseswithmembers class * {native <methods>;}
 
 # 头条广告平台混淆
 -keep class com.bytedance.sdk.openadsdk.** { *; }
--keep public interface com.bytedance.sdk.openadsdk.downloadnew.** {*;}
--keep class com.pgl.sys.ces.* {*;}
+-keep class com.bytedance.frameworks.** { *; }
+-keep class ms.bd.c.Pgl.**{*;}
+-keep class com.bytedance.mobsec.metasec.ml.**{*;}
+-keep class com.ss.android.**{*;}
+-keep class com.bytedance.embedapplog.** {*;}
+-keep class com.bytedance.embed_dr.** {*;}
+-keep class com.bykv.vk.** {*;}
 
 # MobiusAd平台混淆
 -keepattributes *Annotation*
@@ -80,50 +85,9 @@
 -keep public class com.smaato.sdk.** { *; }
 -keep public interface com.smaato.sdk.** { *; }
 
-# 芒果广告平台混淆
--keep class android.support.v4.** { public *; }
--keep class android.support.v7.** { public *; }
--keep class * implements java.io.Serializable {*;}
--keep class com.hunantv.media.** { *;}
--keep class com.mgmi.** { *;}
--keep class com.mgadplus.** { *;}
--dontwarn com.hmt.analytics.**
--dontwarn org.apaches.commons.codec.**
--keep class com.hmt.analytics.**{*; }
--keep class org.apaches.commons.codec.**{*; }
-# freco
--dontwarn com.facebook.**
--keep enum com.facebook.**
--keep public interface com.facebook.**
--keep class com.facebook.**
--keep class com.facebook.** { *; }
--keep,allowobfuscation @interface com.facebook.common.internal.DoNotStrip
--keep @com.facebook.common.internal.DoNotStrip class *
--keepclassmembers class * {
- @com.facebook.common.internal.DoNotStrip *;
-}
--dontwarn org.eclipse.**
--keep class org.eclipse.** { *;}
--dontwarn com.squareup.**
--keep class com.squareup.** { *;}
--keep public class com.mi.ad.sdk.**{*;}
--keep public class com.doman.core.**{*;}
--keep public class com.core.cell.** {*;}
-# android
--keep class android.**{*;}
--keep @interface system.** {*;}
--keepclassmembers class system.**{ public *;}
--dontwarn android.**
--dontwarn com.android.**
--dontwarn system.**
--keep @interface com.core.cell.helper.Keep {*;}
--keep @interface com.android.a.a.**{*;}
--keep class io.reactivex.**{*;}
--keep class com.github.megatronking.stringfog.**{*;}
--keep @interface com.github.megatronking.stringfog.**{*;}
 # 华为平台混淆
 -keep class com.huawei.openalliance.ad.** { *; }
--dontwarn com.huawei.openalliance.ad.activity.PPSActivity
+-keep class com.huawei.hms.ads.** { *; }
 
 # mimo 平台混淆
 -keep class com.miui.zeus.mimo.sdk.* { *; }
