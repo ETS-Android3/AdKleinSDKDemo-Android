@@ -6,8 +6,8 @@ android {
         applicationId "com.iusmob.adklein.demo"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 31001
-        versionName "3.1.1"
+        versionCode 32000
+        versionName "3.2.0"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -75,11 +75,11 @@ dependencies {
     implementation 'com.android.support:design:30.0.0'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
-    implementation(name: 'msa_mdid_1.0.23', ext: 'aar')
+    implementation(name: 'oaid_sdk_1.0.25', ext: 'aar')
 
     // adKleinSdk(必须)
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
-    implementation 'com.iusmob.adklein.ad:core:3.1.1'
+    implementation 'com.iusmob.adklein.ad:core:3.2.0'
 
     // 莫比乌斯，推荐接入(需要gson和okhttp支持)
     implementation 'com.iusmob.adklein.ad:mobius:2.1.3'

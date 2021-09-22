@@ -57,8 +57,6 @@ public class NativeExpressAdActivity extends AppCompatActivity implements View.O
                 this,
                 getScreenWidth(), 0.0F
         );
-        //设置华为广告为测试环境
-        expressAd.setDev(true);
         expressAd.setAdPlayWithMute(true);
         expressAd.load(1);
     }
@@ -84,7 +82,8 @@ public class NativeExpressAdActivity extends AppCompatActivity implements View.O
 
     @Override
     public void onAdClose(AdKleinNativeExpressAdData kleinNativeExpressAd) {
-        ToastUtils.toast(NativeExpressAdActivity.this, "native express ad close", Toast.LENGTH_SHORT);
+        ToastUtils.toast(NativeExpressAdActivity.this, "native express ad close",
+                Toast.LENGTH_SHORT);
         adContainer.removeAllViews();
     }
 
@@ -96,7 +95,8 @@ public class NativeExpressAdActivity extends AppCompatActivity implements View.O
 
     @Override
     public void onAdShow() {
-        ToastUtils.toast(NativeExpressAdActivity.this, "native express ad show", Toast.LENGTH_SHORT);
+        ToastUtils.toast(NativeExpressAdActivity.this, "native express ad show",
+                Toast.LENGTH_SHORT);
     }
 
     @Override

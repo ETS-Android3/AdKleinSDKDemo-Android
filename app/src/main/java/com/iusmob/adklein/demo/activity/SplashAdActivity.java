@@ -176,8 +176,8 @@ public class SplashAdActivity extends Activity implements View.OnClickListener {
                 ToastUtils.toast(SplashAdActivity.this, "splash onAdClicked", Toast.LENGTH_SHORT);
             }
         });
-        //设置请求广告为测试环境(华为)
-        kleinSplash.setDev(true);
+        //设置应用热启动（从后台切换到APP内）时展示开屏广告，可以在管理后台进行配置。
+        kleinSplash.setClassAddress("com.iusmob.adklein.demo.activity.SplashAdActivity");
 
         if (switchJump.isChecked()) {
             // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长）
@@ -211,6 +211,10 @@ public class SplashAdActivity extends Activity implements View.OnClickListener {
      * 跳转到主界面
      */
     private void jumpMain() {
+        if (!this.isTaskRoot()) {
+            finish();
+            return;
+        }
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }

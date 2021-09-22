@@ -87,8 +87,6 @@ public class RewardVideoAdActivity extends AppCompatActivity implements View.OnC
                     }
                 }
         );
-        //设置华为广告为测试环境
-        rewardVideo.setDev(true);
     }
 
     @Override
