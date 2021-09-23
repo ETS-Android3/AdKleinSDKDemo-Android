@@ -211,10 +211,6 @@ public class SplashAdActivity extends Activity implements View.OnClickListener {
      * 跳转到主界面
      */
     private void jumpMain() {
-        if (!this.isTaskRoot()) {
-            finish();
-            return;
-        }
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }
