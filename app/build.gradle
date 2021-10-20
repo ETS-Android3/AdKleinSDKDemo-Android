@@ -6,8 +6,8 @@ android {
         applicationId "com.iusmob.adklein.demo"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 33000
-        versionName "3.3.0"
+        versionCode 33001
+        versionName "3.3.1"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         ndk {
@@ -79,17 +79,17 @@ dependencies {
 
     // adKleinSdk(必须)
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
-    implementation 'com.iusmob.adklein.ad:core:3.3.0'
+    implementation 'com.iusmob.adklein.ad:core:3.3.1'
 
     // 莫比乌斯，推荐接入(需要gson和okhttp支持)
-    implementation 'com.iusmob.adklein.ad:mobius:2.1.3'
+    implementation 'com.iusmob.adklein.ad:mobius:2.2.0'
     implementation 'com.google.code.gson:gson:2.8.5'
 
     // 头条，推荐接入
-    implementation 'com.iusmob.adklein.ad.adapter:toutiao:2.1.1'
+    implementation 'com.iusmob.adklein.ad.adapter:toutiao:2.1.3'
 
     // 广点通，推荐接入
-    implementation 'com.iusmob.adklein.ad.adapter:gdt:2.1.1'
+    implementation 'com.iusmob.adklein.ad.adapter:gdt:2.1.3'
 
     // 快手AdapterSDK，可选的
     implementation 'com.iusmob.adklein.ad.adapter:ks:2.1.1'
