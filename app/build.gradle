@@ -89,7 +89,7 @@ dependencies {
     implementation 'com.iusmob.adklein.ad.adapter:toutiao:2.1.4'
 
     // 广点通，推荐接入
-    implementation 'com.iusmob.adklein.ad.adapter:gdt:2.1.4'
+    implementation 'com.iusmob.adklein.ad.adapter:gdt:2.1.5'
 
     // 快手，推荐接入
     implementation 'com.iusmob.adklein.ad.adapter:ks:2.1.4'
