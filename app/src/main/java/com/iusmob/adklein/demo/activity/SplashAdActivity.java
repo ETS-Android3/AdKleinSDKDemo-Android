@@ -178,7 +178,7 @@ public class SplashAdActivity extends Activity implements View.OnClickListener {
         }, 5000);
 
         if (switchJump.isChecked()) {
-            // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长）
+            // 设置自定义跳过按钮和倒计时时长（非必传，倒计时时长范围[3000,5000]建议不要传入倒计时时长。注：只支持穿山甲。））
             kleinSplash.setSkipView(tvSkip, 5000);
         }
 
