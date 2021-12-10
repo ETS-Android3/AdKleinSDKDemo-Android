@@ -31,17 +31,17 @@ android {
     signingConfigs {
         debug {
             v2SigningEnabled true
-            storeFile file('../demo.jks')
-            storePassword 'adsaas'
-            keyAlias 'demo'
-            keyPassword 'adsaas'
+            storeFile file('../mobius.jks')
+            storePassword '123456'
+            keyAlias 'mobius'
+            keyPassword '123456'
         }
         release {
             v2SigningEnabled true
-            storeFile file('../demo.jks')
-            storePassword 'adsaas'
-            keyAlias 'demo'
-            keyPassword 'adsaas'
+            storeFile file('../mobius.jks')
+            storePassword '123456'
+            keyAlias 'mobius'
+            keyPassword '123456'
         }
     }
 
