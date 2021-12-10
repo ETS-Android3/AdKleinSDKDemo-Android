@@ -44,12 +44,20 @@ public class InterstitialAdActivity extends AppCompatActivity implements View.On
         kleinInterstitial = new AdKleinInterstitialAd(
                 this, DemoConstants.INTERSTITIAL_ID,
                 new AdKleinInterstitialAdListener() {
+                    /**
+                     * 广告关闭回调
+                     * */
                     @Override
                     public void onAdClosed() {
                         ToastUtils.toast(InterstitialAdActivity.this, "interstitial onAdClosed",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告渲染失败
+                     *
+                     * @param adKleinError         错误描述
+                     */
                     @Override
                     public void onRenderFail(AdKleinError adKleinError) {
                         ToastUtils.toast(InterstitialAdActivity.this, "interstitial onRenderFail "
@@ -57,30 +65,46 @@ public class InterstitialAdActivity extends AppCompatActivity implements View.On
                                 , Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告渲染成功
+                     */
                     @Override
                     public void onRenderSuccess() {
                         ToastUtils.toast(InterstitialAdActivity.this, "interstitial " +
                                 "onRenderSuccess", Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告加载失败
+                     * @param adKleinError 错误描述
+                     * */
                     @Override
                     public void onError(AdKleinError adKleinError) {
                         ToastUtils.toast(InterstitialAdActivity.this,
                                 "interstitial onError " + adKleinError.getErrorCode() + " " + adKleinError.getErrorMsg(), Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告拉取成功
+                     * */
                     @Override
                     public void onAdLoaded() {
                         ToastUtils.toast(InterstitialAdActivity.this, "interstitial onAdLoaded",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告展示成功
+                     * */
                     @Override
                     public void onAdShow() {
                         ToastUtils.toast(InterstitialAdActivity.this, "interstitial onAdShow",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告点击回调
+                     * */
                     @Override
                     public void onAdClicked() {
                         ToastUtils.toast(InterstitialAdActivity.this, "interstitial onAdClicked",
@@ -88,6 +112,8 @@ public class InterstitialAdActivity extends AppCompatActivity implements View.On
                     }
                 }, (int) (UIUtils.getScreenWidthDp(this) * 3 / 4), UIUtils.getScreenWidthDp(this)
         );
+        //设置视频音量，true为
+        kleinInterstitial.setVolumeOn(true);
     }
 
     @Override

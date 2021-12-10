@@ -32,12 +32,19 @@ public class BannerAdActivity extends AppCompatActivity {
                 DemoConstants.BANNER_ID,
                 adContainer,
                 new AdKleinBannerAdListener() {
+                    /**
+                     * 广告关闭回调
+                     * */
                     @Override
                     public void onAdClose() {
                         ToastUtils.toast(BannerAdActivity.this, "banner ad closed",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告加载失败
+                     * @param adKleinError 错误描述
+                     * */
                     @Override
                     public void onError(AdKleinError adKleinError) {
                         ToastUtils.toast(BannerAdActivity.this,
@@ -45,6 +52,9 @@ public class BannerAdActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告拉取成功
+                     * */
                     @Override
                     public void onAdLoaded() {
                         ToastUtils.toast(BannerAdActivity.this, "banner ad loaded",
@@ -52,12 +62,18 @@ public class BannerAdActivity extends AppCompatActivity {
                         kleinBanner.show();
                     }
 
+                    /**
+                     * 广告展示成功
+                     * */
                     @Override
                     public void onAdShow() {
                         ToastUtils.toast(BannerAdActivity.this, "banner ad shown",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告点击回调
+                     * */
                     @Override
                     public void onAdClicked() {
                         ToastUtils.toast(BannerAdActivity.this, "banner ad clicked",

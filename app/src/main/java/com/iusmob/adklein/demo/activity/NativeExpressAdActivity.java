@@ -61,6 +61,12 @@ public class NativeExpressAdActivity extends AppCompatActivity implements View.O
         expressAd.load(1);
     }
 
+    /**
+     * 广告拉取成功
+     * 获取到广告view后，需要根据data数据进行自渲染
+     *
+     * @param list 广告加载器对象集合
+     */
     @Override
     public void onAdLoaded(List<AdKleinNativeExpressAdData> list) {
         ToastUtils.toast(NativeExpressAdActivity.this, "native express ad loaded",
@@ -72,6 +78,12 @@ public class NativeExpressAdActivity extends AppCompatActivity implements View.O
         }
     }
 
+    /**
+     * 广告渲染失败
+     *
+     * @param kleinNativeExpressAd 模版广告
+     * @param adKleinError         错误描述
+     */
     @Override
     public void onRenderFail(AdKleinNativeExpressAdData kleinNativeExpressAd,
                              AdKleinError adKleinError) {
@@ -80,6 +92,11 @@ public class NativeExpressAdActivity extends AppCompatActivity implements View.O
                 Toast.LENGTH_SHORT);
     }
 
+    /**
+     * 广告关闭回调
+     *
+     * @param kleinNativeExpressAd 广告数据对象
+     */
     @Override
     public void onAdClose(AdKleinNativeExpressAdData kleinNativeExpressAd) {
         ToastUtils.toast(NativeExpressAdActivity.this, "native express ad close",
@@ -87,18 +104,29 @@ public class NativeExpressAdActivity extends AppCompatActivity implements View.O
         adContainer.removeAllViews();
     }
 
+    /**
+     * 广告加载失败
+     *
+     * @param adKleinError 错误描述
+     */
     @Override
     public void onError(AdKleinError adKleinError) {
         ToastUtils.toast(NativeExpressAdActivity.this, "native express ad error" +
                 adKleinError.getErrorCode() + " " + adKleinError.getErrorMsg(), Toast.LENGTH_SHORT);
     }
 
+    /**
+     * 广告展示成功
+     */
     @Override
     public void onAdShow() {
         ToastUtils.toast(NativeExpressAdActivity.this, "native express ad show",
                 Toast.LENGTH_SHORT);
     }
 
+    /**
+     * 广告点击回调
+     */
     @Override
     public void onAdClicked() {
         ToastUtils.toast(NativeExpressAdActivity.this, "native express ad clicked",

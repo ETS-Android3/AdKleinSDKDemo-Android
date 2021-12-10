@@ -61,6 +61,12 @@ public class DrawAdActivity extends AppCompatActivity implements AdKleinDrawAdLi
         refreshLayout.autoRefresh();
     }
 
+    /**
+     * 广告拉取成功
+     * 获取到广告view后，需要根据data数据进行自渲染
+     *
+     * @param list 广告加载器对象集合
+     */
     @Override
     public void onAdLoaded(List<AdKleinDrawVodAdListener> list) {
         for (int i = 0; i < list.size(); i++) {
@@ -76,6 +82,11 @@ public class DrawAdActivity extends AppCompatActivity implements AdKleinDrawAdLi
         refreshLayout.finish(refreshType, true, false);
     }
 
+    /**
+     * 广告加载失败
+     *
+     * @param adKleinError 错误描述
+     */
     @Override
     public void onError(final AdKleinError adKleinError) {
         ToastUtils.toast(this, "draw ad error" +
@@ -83,21 +94,33 @@ public class DrawAdActivity extends AppCompatActivity implements AdKleinDrawAdLi
         refreshLayout.finish(refreshType, false, false);
     }
 
+    /**
+     * 广告展示成功
+     */
     @Override
     public void onAdShow() {
         ToastUtils.toast(this, "draw ad show", Toast.LENGTH_SHORT);
     }
 
+    /**
+     * 广告点击回调
+     */
     @Override
     public void onAdClicked() {
         ToastUtils.toast(this, "draw ad clicked",
                 Toast.LENGTH_SHORT);
     }
 
+    /**
+     * 广告渲染成功回调
+     */
     @Override
     public void onRenderSuccess(final View view, final float v, final float v1) {
     }
 
+    /**
+     * 广告渲染失败回调
+     */
     @Override
     public void onRenderFail(final AdKleinError adKleinError) {
         ToastUtils.toast(this, "draw ad render fail" +
@@ -105,6 +128,9 @@ public class DrawAdActivity extends AppCompatActivity implements AdKleinDrawAdLi
                 Toast.LENGTH_SHORT);
     }
 
+    /**
+     * 广告关闭回调
+     */
     @Override
     public void onAdClose() {
         ToastUtils.toast(this, "draw ad close", Toast.LENGTH_SHORT);

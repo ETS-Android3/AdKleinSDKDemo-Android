@@ -43,42 +43,64 @@ public class FullScreenVideoAdActivity extends AppCompatActivity implements View
         fullscreenVideo = new AdKleinFullscreenVideoAd(
                 this, DemoConstants.FULLSCREEN_ID, 1, false,
                 new AdKleinFullscreenVideoAdListener() {
+                    /**
+                     * 广告关闭回调
+                     * */
                     @Override
                     public void onAdClose() {
                         ToastUtils.toast(FullScreenVideoAdActivity.this, "fullscreen onAdClose",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 视频播放完毕回调
+                     * */
                     @Override
                     public void onVideoComplete() {
                         ToastUtils.toast(FullScreenVideoAdActivity.this, "fullscreen " +
                                 "onVideoComplete", Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 视频点击跳过回调
+                     * */
                     @Override
                     public void onSkippedVideo() {
                         ToastUtils.toast(FullScreenVideoAdActivity.this, "fullscreen " +
                                 "onSkippedVideo", Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告加载失败
+                     * @param adKleinError 错误描述
+                     * */
                     @Override
                     public void onError(AdKleinError adKleinError) {
                         ToastUtils.toast(FullScreenVideoAdActivity.this,
                                 "fullscreen onError " + adKleinError.getErrorCode() + " " + adKleinError.getErrorMsg(), Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告拉取成功
+                     * */
                     @Override
                     public void onAdLoaded() {
                         ToastUtils.toast(FullScreenVideoAdActivity.this, "fullscreen onAdLoaded",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告展示成功
+                     * */
                     @Override
                     public void onAdShow() {
                         ToastUtils.toast(FullScreenVideoAdActivity.this, "fullscreen onAdShow",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告点击回调
+                     * */
                     @Override
                     public void onAdClicked() {
                         ToastUtils.toast(FullScreenVideoAdActivity.this, "fullscreen onAdClicked"

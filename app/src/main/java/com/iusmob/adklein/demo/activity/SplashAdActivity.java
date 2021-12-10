@@ -129,18 +129,26 @@ public class SplashAdActivity extends Activity implements View.OnClickListener {
         // ，创建开屏广告实例第一个参数可以是Activity或Fragment，第二个参数是广告容器（请保证容器不会拦截点击、触摸等事件）
         kleinSplash = new AdKleinSplashAd(this, adContainer,
                 DemoConstants.SPLASH_ID, new AdKleinSplashAdListener() {
+            /**
+             * 广告关闭回调
+             * */
             @Override
             public void onAdClosed() {
                 ToastUtils.toast(SplashAdActivity.this, "splash onAdClosed", Toast.LENGTH_SHORT);
                 jumpMain();
             }
 
+            /**
+             * 广告跳过回调，不一定准确
+             * */
             @Override
             public void onAdSkip() {
-                //广告跳过回调，不一定准确
                 ToastUtils.toast(SplashAdActivity.this, "splash onAdSkip", Toast.LENGTH_SHORT);
             }
 
+            /**
+             * 倒计时回调，返回广告还将被展示的剩余时间，单位是 ms
+             * */
             @Override
             public void onAdTick(int millisUntilFinished) {
                 // 如果没有设置自定义跳过按钮不会回调该方法
@@ -149,6 +157,10 @@ public class SplashAdActivity extends Activity implements View.OnClickListener {
                         millisUntilFinished));
             }
 
+            /**
+             * 广告加载失败
+             * @param adKleinError 错误描述
+             * */
             @Override
             public void onError(AdKleinError adKleinError) {
                 ToastUtils.toast(SplashAdActivity.this,
@@ -157,6 +169,9 @@ public class SplashAdActivity extends Activity implements View.OnClickListener {
                 jumpMain();
             }
 
+            /**
+             * 广告拉取成功
+             * */
             @Override
             public void onAdLoaded() {
                 ToastUtils.toast(SplashAdActivity.this, "splash onAdLoaded", Toast.LENGTH_SHORT);
@@ -166,11 +181,17 @@ public class SplashAdActivity extends Activity implements View.OnClickListener {
                 kleinSplash.show();
             }
 
+            /**
+             * 广告展示成功
+             * */
             @Override
             public void onAdShow() {
                 ToastUtils.toast(SplashAdActivity.this, "splash onAdShow", Toast.LENGTH_SHORT);
             }
 
+            /**
+             * 广告点击回调
+             * */
             @Override
             public void onAdClicked() {
                 ToastUtils.toast(SplashAdActivity.this, "splash onAdClicked", Toast.LENGTH_SHORT);

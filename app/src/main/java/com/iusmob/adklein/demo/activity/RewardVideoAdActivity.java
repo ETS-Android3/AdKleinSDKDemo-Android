@@ -37,30 +37,46 @@ public class RewardVideoAdActivity extends AppCompatActivity implements View.OnC
                 this, DemoConstants.REWARD_VIDEO_ID,
                 0, true,
                 new AdKleinRewardVideoAdListener() {
+                    /**
+                     * 广告关闭回调
+                     * */
                     @Override
                     public void onAdClose() {
                         ToastUtils.toast(RewardVideoAdActivity.this, "reward onAdClose",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 激励视频播放完毕回调
+                     * */
                     @Override
                     public void onVideoComplete() {
                         ToastUtils.toast(RewardVideoAdActivity.this, "reward onVideoComplete",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 激励视频点击跳过回调
+                     * */
                     @Override
                     public void onSkippedVideo() {
                         ToastUtils.toast(RewardVideoAdActivity.this, "reward onSkippedVideo",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 激励视频奖励回调
+                     * */
                     @Override
                     public void onAdReward() {
                         ToastUtils.toast(RewardVideoAdActivity.this, "reward onAdReward",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告加载失败
+                     * @param adKleinError 错误描述
+                     * */
                     @Override
                     public void onError(AdKleinError adKleinError) {
                         ToastUtils.toast(RewardVideoAdActivity.this,
@@ -68,18 +84,27 @@ public class RewardVideoAdActivity extends AppCompatActivity implements View.OnC
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告拉取成功
+                     * */
                     @Override
                     public void onAdLoaded() {
                         ToastUtils.toast(RewardVideoAdActivity.this, "reward onAdLoaded",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告展示成功
+                     * */
                     @Override
                     public void onAdShow() {
                         ToastUtils.toast(RewardVideoAdActivity.this, "reward onAdShow",
                                 Toast.LENGTH_SHORT);
                     }
 
+                    /**
+                     * 广告点击回调
+                     * */
                     @Override
                     public void onAdClicked() {
                         ToastUtils.toast(RewardVideoAdActivity.this, "reward onAdClicked",

@@ -66,6 +66,12 @@ public class NativeAdActivity extends AppCompatActivity implements View.OnClickL
         nativeAd.load(1);
     }
 
+    /**
+     * 广告拉取成功
+     * 获取到广告view后，需要根据data数据进行自渲染
+     *
+     * @param list 广告加载器对象集合
+     */
     @Override
     public void onAdLoaded(List<AdKleinNativeAdData> list) {
         ToastUtils.toast(NativeAdActivity.this, "native ad loaded",
@@ -73,6 +79,11 @@ public class NativeAdActivity extends AppCompatActivity implements View.OnClickL
         showNativeAd(list.get(0));
     }
 
+    /**
+     * 广告关闭回调
+     *
+     * @param kleinNativeAd 广告数据对象
+     */
     @Override
     public void onAdClose(AdKleinNativeAdData kleinNativeAd) {
         ToastUtils.toast(NativeAdActivity.this, "native ad close", Toast.LENGTH_SHORT);
@@ -82,17 +93,28 @@ public class NativeAdActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+    /**
+     * 广告加载失败
+     *
+     * @param adKleinError 错误描述
+     */
     @Override
     public void onError(AdKleinError adKleinError) {
         ToastUtils.toast(NativeAdActivity.this, "native ad error" +
                 adKleinError.getErrorCode() + " " + adKleinError.getErrorMsg(), Toast.LENGTH_SHORT);
     }
 
+    /**
+     * 广告展示成功
+     */
     @Override
     public void onAdShow() {
         ToastUtils.toast(NativeAdActivity.this, "native ad show", Toast.LENGTH_SHORT);
     }
 
+    /**
+     * 广告点击回调
+     */
     @Override
     public void onAdClicked() {
         ToastUtils.toast(NativeAdActivity.this, "native ad clicked",
