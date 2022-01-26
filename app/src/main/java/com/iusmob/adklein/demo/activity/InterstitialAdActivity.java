@@ -112,7 +112,7 @@ public class InterstitialAdActivity extends AppCompatActivity implements View.On
                     }
                 }, (int) (UIUtils.getScreenWidthDp(this) * 3 / 4), UIUtils.getScreenWidthDp(this)
         );
-        //设置视频音量，true为
+        //设置视频音量，true为开启音量，false关闭音量
         kleinInterstitial.setVolumeOn(true);
     }
 
